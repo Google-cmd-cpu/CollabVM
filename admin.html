@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="admin-panel">
+    <h1>🔐 Admin Panel</h1>
+    <div id="login" style="margin-bottom: 20px;">
+      <input type="password" id="admin-password" placeholder="Введите пароль администратора">
+      <button onclick="checkPassword()">Войти</button>
+    </div>
+    <div id="controls" style="display: none;">
+      <h2>Управление VM</h2>
+      <button onclick="alert('VM перезагружена')">🔁 Reboot VM</button>
+      <button onclick="alert('VM завершена')">⛔ Kill VM</button>
+      <button onclick="alert('ISO загружен')">📤 Upload ISO</button>
+      <button onclick="alert('VM удалена')">🗑 Delete VM</button>
+    </div>
+  </div>
+  <script>
+    const correctPassword = "admin123";
+    function checkPassword() {
+      const input = document.getElementById("admin-password").value;
+      if (input === correctPassword) {
+        document.getElementById("controls").style.display = "block";
+        document.getElementById("login").style.display = "none";
+      } else {
+        alert("Неверный пароль!");
+      }
+    }
+  </script>
+</body>
+</html>
