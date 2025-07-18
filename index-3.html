@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CollabVM Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <h1>CollabVM Clone</h1>
+    <div id="rules">
+      <h2>Rules</h2>
+      <ul>
+        <li>1. Пожалуйста, не уничтожайте виртуальную машину (кроме VM 2 и VM 7).</li>
+        <li>2. Не загружайте вредоносные файлы.</li>
+        <li>3. Соблюдайте уважение к другим пользователям.</li>
+      </ul>
+    </div>
+
+    <div id="vm-area">
+      <iframe id="vnc" src="about:blank" title="VM Display"></iframe>
+    </div>
+
+    <div id="controls">
+      <button onclick="joinVM()">Join VM</button>
+      <button onclick="uploadISO()">Upload ISO</button>
+      <button onclick="showCreateVM()">Создать VM</button>
+    </div>
+
+    <div id="create-vm" style="display:none;">
+      <h2>Создать свою VM</h2>
+      <input type="text" id="vm-ip" placeholder="Введите IP-адрес (пример: http://192.168.1.1)" />
+      <button onclick="createVM()">Создать</button>
+    </div>
+
+    <div id="chat">
+      <h2>Chat</h2>
+      <div id="chat-box"></div>
+      <input type="text" id="chat-input" placeholder="Type a message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
